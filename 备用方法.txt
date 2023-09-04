@@ -1,0 +1,79 @@
+   /*
+        for(unsigned int i = 0; i < Bpath.size(); i++)
+        {
+            if(visit[i] == 0)
+            {
+                result.push_back(Bpath[i]);
+            }
+            else{
+                if(visit[i] == 1)
+                {
+                    for(unsigned int j = 0 ; j < near_node.size(); j++)
+                    {
+                        if(near_node[j][0].first == i)
+                        {
+                            if(visit[near_node[j][1].first] == 1)
+                            {
+                                bool flag = true;
+                                for(int  k = near_node[j][0].first+1; k < near_node[j][1].first; k++)
+                                {
+                                    if(visit[k] != 0)
+                                    {
+                                        flag = false;
+                                    }
+                                }
+                                if(flag)
+                                {
+                                    vector<int> tmp;
+                                    int dis_tmp;
+                                    tmp = Dijkstra(Bpath[i], candidate[j],dis_tmp);
+                                    result.insert(result.end(),tmp.begin(),tmp.end());
+                                    tmp.clear();
+                                    tmp = Dijkstra(candidate[j],Bpath[near_node[j][1].first],dis_tmp);
+                                    result.insert(result.end(),tmp.begin(),tmp.end());
+                                    i = near_node[j][1].first;
+                                }
+                                else {
+                                    int last = 0;
+                                    vector <int>tmp_cand;
+                                    for(int  k = near_node[j][0].first+1; k < near_node[j][1].first; k++)
+                                    {
+                                        if(visit[k] > 0)
+                                        {
+                                            for(int t = 0; t < near_node.size(); t++)
+                                            {
+                                                if(near_node[t][0].first == k)
+                                                {
+                                                    tmp_cand.push_back(candidate[t]);
+                                                    if(last < near_node[t][1].first)
+                                                    {
+                                                        last = near_node[t][1].first;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    vector<int> tmp;
+                                    int dis_tmp;
+                                    tmp = Dijkstra(Bpath[i], candidate[j],dis_tmp);
+                                    result.insert(result.end(),tmp.begin(),tmp.end());
+                                    int pos_num = candidate[j];
+                                    for(int t = 0; t < tmp.size(); t++)
+                                    {
+                                        tmp.clear();
+                                        tmp = Dijkstra(pos_num, tmp[t],dis_tmp);
+                                        result.insert(result.end(),tmp.begin(),tmp.end());
+                                        pos_num = tmp[t];
+                                    }
+                                    tmp.clear();
+                                    tmp = Dijkstra(pos_num,Bpath[last],dis_tmp);
+                                    result.insert(result.end(),tmp.begin(),tmp.end());
+                                    i = last;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }*/

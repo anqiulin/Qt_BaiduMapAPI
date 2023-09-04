@@ -1,0 +1,9 @@
+编译环境 win10  + QT5.9.3 + VS2015  （win10下MinGW不支持 QWebEngineView，无法编译）
+Ubuntu16.04 + QT5.9.3 + GCC（默认环境）。
+
+release文件夹是我在win10中编译好了的，可以直接打开运行里面的exe文件。
+
+很久之前写的demo， 代码比较随意，能体现功能就行，轻喷。
+
+觉得有用的话烦请顶个贴，谢谢！
+https://blog.csdn.net/qq_43569273/article/details/88122422
